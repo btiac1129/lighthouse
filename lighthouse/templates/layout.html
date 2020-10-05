@@ -15,6 +15,7 @@
 	<style>
 		body {
 			font-family: 'Nanum Myeongjo', serif;
+			text-transform: capitalize;
 		}
 	</style>
 </head>
@@ -32,15 +33,17 @@
 			<div class="collapse navbar-collapse" id="navbarsExample07">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="/">Home<span class="sr-only"></span></a>
+						<a class="nav-link text-capitalize" href="/" style="font-size: 14px;">Home<span
+								class="sr-only"></span></a>
 					</li>
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">Life</a>
+						<a class="nav-link dropdown-toggle text-capitalize" href="#" id="dropdown07"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+							style="font-size: 14px;">Lighting Town</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown07">
 							<a class="dropdown-item" href="#" style="font-size: 13px;">타운</a>
 							<a class="dropdown-item" href="#" style="font-size: 13px;">스퀘어</a>
-							<a class="dropdown-item" href="#" style="font-size: 13px;">라이트하우스</a>
+							<a class="dropdown-item" href="#" style="font-size: 13px;">하우스</a>
 						</div>
 					</li>
 				</ul>
@@ -49,7 +52,7 @@
 				</form>
 				{% if user.is_authenticated %}
 				<ul class="navbar-nav dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown"
+					<a class="nav-link dropdown-toggle text-capitalize" href="#" id="dropdown07" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown07">
 						<a class="dropdown-item" href="{% url 'profile_edit' %}" style="font-size: 13px;">프로필</a>
