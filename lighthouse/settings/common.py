@@ -1,4 +1,5 @@
 from pathlib import Path
+import os 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -15,6 +16,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+ADMINS = [
+    ('Sojeong Han', 'btiac1129@gmail.com'),
+]
 
 # Application definition
 
@@ -42,8 +46,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'lighthouse.urls'
-
-AUTH_USER_MODEL = 'accounts.User'
 
 TEMPLATES = [
     {
@@ -74,6 +76,7 @@ DATABASES = {
     }
 }
 
+AUTH_USER_MODEL = 'accounts.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -92,7 +95,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -119,4 +121,14 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
+INTERNAL_IPS = ['127.0.0.1']
 
+# Email with Send Grid
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+WELCOME_EMAIL_SENDER = 'btiac1129@gmail.com'

@@ -1,0 +1,29 @@
+{% load static %}
+{% load bootstrap4 %}
+
+<div class="contaiener">
+    <div class="text-center mb-4 pt-md-5">
+        <img class="mb-4" src="{% static 'lighthouse-logo.jpg' %}" alt="" width="72" height="72">
+        {% if form_title %}
+        <h1 class="h3 mb-3 font-weight-normal">{{ form_title }}</h1>
+        {% endif %}
+        <p>Lighthouse is a light tool to help you with your branding activities.</p>
+    </div>
+
+    {% if form %}
+    <form class="form-signin" action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        {% bootstrap_form form %}
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" value="remember-me"> Remember me
+            </label>
+        </div>
+        {% buttons %}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">
+            {{ submit_label|default:"Submit" }}
+        </button>
+        {% endbuttons %}
+        <p class="mt-5 mb-3 text-muted text-center">© 2020 - 2020</p>
+    </form>
+    {% endif %}
+</div>
