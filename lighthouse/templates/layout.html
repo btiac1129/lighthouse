@@ -52,7 +52,7 @@
 					<a class="nav-link dropdown-toggle" href="#" id="dropdown07" data-toggle="dropdown"
 						aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
 					<div class="dropdown-menu" aria-labelledby="dropdown07">
-						<a class="dropdown-item" href="#" style="font-size: 13px;">프로필</a>
+						<a class="dropdown-item" href="{% url 'profile_edit' %}" style="font-size: 13px;">프로필</a>
 						<a class="dropdown-item" href="{% url 'logout' %}" style="font-size: 13px;">로그아웃</a>
 						<a class="dropdown-item" href="#" style="font-size: 13px;">설정</a>
 					</div>
