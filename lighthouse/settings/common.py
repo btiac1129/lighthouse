@@ -33,7 +33,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     # locals apps
     'accounts',
-    'Lighttown',
+    'Town',
+    'House',
 ]
 
 MIDDLEWARE = [
