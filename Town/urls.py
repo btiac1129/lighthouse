@@ -8,4 +8,5 @@ from . import views
 
 urlpatterns = [
     path('', views.town_list, name='town_list'),
+    path('new/', views.town_new, name='town_new'),
 ]
