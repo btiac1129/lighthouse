@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
     # third apps
     'bootstrap4',
     # locals apps
@@ -80,6 +81,8 @@ DATABASES = {
 
 AUTH_USER_MODEL = 'accounts.User'
 
+LOGIN_REDIRECT_URL = '/'
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -121,7 +124,8 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 INTERNAL_IPS = ['127.0.0.1']
 

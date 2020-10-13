@@ -6,6 +6,7 @@ class Town(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=140)
     operator = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    thumbnail = models.ImageField(upload_to='town/town/%Y/%m/%d', default='town.jpg')
 
     class Meta:
         ordering = ["name"]

@@ -1,11 +1,12 @@
 from django.db import models
 from django.conf import settings
+from django.contrib.postgres.fields import JSONField
 from datetime import timedelta
 from Town.models import Town
 
 class House(models.Model):
     town = models.ForeignKey(Town, on_delete=models.CASCADE)
-    town_name = models.JSONField(null=True, blank=True) # FIXME:
+    town_name = models.JSONField(null=True) # FIXME:
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=140)
     date_started = models.DateTimeField(blank=True)
