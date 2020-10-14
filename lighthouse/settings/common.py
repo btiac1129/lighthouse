@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     # third apps
     'bootstrap4',
+    'django_extensions',
     # locals apps
     'accounts',
     'Town',

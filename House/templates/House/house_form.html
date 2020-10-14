@@ -1,0 +1,11 @@
+{% extends 'House/layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 offset-3">
+            {% include '_form.html' with form_title='하우스 시작하기' form_button='하우스 시작하기' %}
+        </div>
+    </div>
+</div>  
+{% endblock content %}

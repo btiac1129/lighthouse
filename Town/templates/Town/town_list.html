@@ -1,5 +1,9 @@
 {% extends 'Town/layout.html' %} 
 
+{% block section %}
+	{% include 'Town/town_section.html' %}
+{% endblock section %}
+
 {% block content %}
 <div class="container mt-5">
   <div class="row">
@@ -8,9 +12,12 @@
       <div class="card">
         <div class="card-header">{{ town.name }}</div>
         <div class="card-body">
-          <img src="{{ town.thumbnail.url }}" style="width: 100%;" />
+            <a href="{% url 'Town:town_houses' town.pk %}"><img src="{{ town.thumbnail.url }}" style="width: 100%;" /></a>
         </div>
-        <div class="card-footer">{{ town.description }}</div>
+        <div class="card-footer">
+			<p>{{ town.description }}</p>
+			<small><a href="{% url 'House:house_new' town.pk %}">하우스 시작하기</a></small>
+		</div>
       </div>
     </div>
     {% endfor %}
